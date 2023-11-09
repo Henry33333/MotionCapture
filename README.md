@@ -1,8 +1,14 @@
 # QT版本
 
-Qt 6.5.2 MinGW 64-bit（现在版本里的套件都比较完善，不需要再额外下载其它的编译器，默认即可）
+Qt 6.5.2 MinGW 64-bit（现在版本里的套件都比较完善，不需要再额外下载其它的编译器，默认即可）。
 
-# 包含文件及部分功能
+# 包含文件及说明
+
+qtnew文件夹包含：qt工程文件（qtnew.pro）、一些初步的cpp头文件和源文件、一个测试用的Excel文件 以及三个当时用的==机器人API文件（include、lib、thirdParty）==。三个API文件目前可以删除，但要记得在qt工程文件中删掉一些代码（主要是==includePath==和==link lib==之类的代码）。
+
+# 功能说明
+
+==utilities.cpp==和==utilities.h==文件也是有关机器人API调用的，可删除。
 
 目前有主界面mainwindow和跟踪界面track。
 
