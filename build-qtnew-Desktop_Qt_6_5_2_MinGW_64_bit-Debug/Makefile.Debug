@@ -16,10 +16,10 @@ CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_QML_DEBUG -DQT_AXCONTAINER_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../qtnew -I. -I../qtnew/thirdParty/cxxopts -I../qtnew/include -I../qtnew/include/messages -I../qtnew/include/client -I../qtnew/include/client_stubs -I../qtnew/include/google -I../qtnew/include/common -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtAxContainer -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtCore -Idebug -I. -I/include -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ 
+INCPATH       = -I../qtnew -I. -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtAxContainer -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtCore -Idebug -I. -I/include -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        -LC:\Users\dell\Desktop\qtnew\qtnew\lib\release -lKortexApiCpp C:\Qt\6.5.2\mingw_64\lib\libQt6AxContainer.a C:\Qt\6.5.2\mingw_64\lib\libQt6AxBase.a -ladvapi32 -lgdi32 -lole32 -loleaut32 -luser32 -luuid -lmpr -luserenv -ld3d11 -ldxgi -ldxguid -ldcomp C:\Qt\6.5.2\mingw_64\lib\libQt6Widgets.a C:\Qt\6.5.2\mingw_64\lib\libQt6Gui.a C:\Qt\6.5.2\mingw_64\lib\libQt6Core.a -lmingw32 C:\Qt\6.5.2\mingw_64\lib\libQt6EntryPoint.a -lshell32  
+LIBS        =        C:\Qt\6.5.2\mingw_64\lib\libQt6AxContainer.a C:\Qt\6.5.2\mingw_64\lib\libQt6AxBase.a -ladvapi32 -lgdi32 -lole32 -loleaut32 -luser32 -luuid -lmpr -luserenv -ld3d11 -ldxgi -ldxguid -ldcomp C:\Qt\6.5.2\mingw_64\lib\libQt6Widgets.a C:\Qt\6.5.2\mingw_64\lib\libQt6Gui.a C:\Qt\6.5.2\mingw_64\lib\libQt6Core.a -lmingw32 C:\Qt\6.5.2\mingw_64\lib\libQt6EntryPoint.a -lshell32  
 QMAKE         = C:\Qt\6.5.2\mingw_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -74,7 +74,7 @@ DESTDIR_TARGET = debug\qtnew.exe
 first: all
 all: Makefile.Debug  debug/qtnew.exe
 
-debug/qtnew.exe: C:/Users/dell/Desktop/qtnew/qtnew/lib/release/libKortexApiCpp.a C:/Qt/6.5.2/mingw_64/lib/libQt6AxContainer.a C:/Qt/6.5.2/mingw_64/lib/libQt6Widgets.a C:/Qt/6.5.2/mingw_64/lib/libQt6Gui.a C:/Qt/6.5.2/mingw_64/lib/libQt6Core.a C:/Qt/6.5.2/mingw_64/lib/libQt6EntryPoint.a ui_mainwindow.h ui_track.h $(OBJECTS) 
+debug/qtnew.exe: C:/Qt/6.5.2/mingw_64/lib/libQt6AxContainer.a C:/Qt/6.5.2/mingw_64/lib/libQt6Widgets.a C:/Qt/6.5.2/mingw_64/lib/libQt6Gui.a C:/Qt/6.5.2/mingw_64/lib/libQt6Core.a C:/Qt/6.5.2/mingw_64/lib/libQt6EntryPoint.a ui_mainwindow.h ui_track.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) $(OBJECTS) $(LIBS)
 
 qmake: FORCE
@@ -298,7 +298,7 @@ debug/moc_mainwindow.cpp: ../qtnew/mainwindow.h \
 		C:/Qt/6.5.2/mingw_64/include/QtAxContainer/qaxobjectinterface.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.5.2/mingw_64/bin/moc.exe
-	C:\Qt\6.5.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/dell/Desktop/qtnew/build-qtnew-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ -IC:/Users/dell/Desktop/qtnew/qtnew -IC:/Users/dell/Desktop/qtnew/qtnew/thirdParty/cxxopts -IC:/Users/dell/Desktop/qtnew/qtnew/include -IC:/Users/dell/Desktop/qtnew/qtnew/include/messages -IC:/Users/dell/Desktop/qtnew/qtnew/include/client -IC:/Users/dell/Desktop/qtnew/qtnew/include/client_stubs -IC:/Users/dell/Desktop/qtnew/qtnew/include/google -IC:/Users/dell/Desktop/qtnew/qtnew/include/common -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtAxContainer -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\qtnew\mainwindow.h -o debug\moc_mainwindow.cpp
+	C:\Qt\6.5.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/dell/Desktop/qtnew/build-qtnew-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ -IC:/Users/dell/Desktop/qtnew/qtnew -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtAxContainer -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\qtnew\mainwindow.h -o debug\moc_mainwindow.cpp
 
 debug/moc_track.cpp: ../qtnew/track.h \
 		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QWidget \
@@ -478,7 +478,7 @@ debug/moc_track.cpp: ../qtnew/track.h \
 		C:/Qt/6.5.2/mingw_64/include/QtAxContainer/qaxobjectinterface.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.5.2/mingw_64/bin/moc.exe
-	C:\Qt\6.5.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/dell/Desktop/qtnew/build-qtnew-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ -IC:/Users/dell/Desktop/qtnew/qtnew -IC:/Users/dell/Desktop/qtnew/qtnew/thirdParty/cxxopts -IC:/Users/dell/Desktop/qtnew/qtnew/include -IC:/Users/dell/Desktop/qtnew/qtnew/include/messages -IC:/Users/dell/Desktop/qtnew/qtnew/include/client -IC:/Users/dell/Desktop/qtnew/qtnew/include/client_stubs -IC:/Users/dell/Desktop/qtnew/qtnew/include/google -IC:/Users/dell/Desktop/qtnew/qtnew/include/common -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtAxContainer -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\qtnew\track.h -o debug\moc_track.cpp
+	C:\Qt\6.5.2\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/dell/Desktop/qtnew/build-qtnew-Desktop_Qt_6_5_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/6.5.2/mingw_64/mkspecs/win32-g++ -IC:/Users/dell/Desktop/qtnew/qtnew -IC:/Qt/6.5.2/mingw_64/include -IC:/Qt/6.5.2/mingw_64/include/QtAxContainer -IC:/Qt/6.5.2/mingw_64/include/QtWidgets -IC:/Qt/6.5.2/mingw_64/include/QtGui -IC:/Qt/6.5.2/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\qtnew\track.h -o debug\moc_track.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -892,7 +892,47 @@ debug/mainwindow.o: ../qtnew/mainwindow.cpp ../qtnew/mainwindow.h \
 		C:/Qt/6.5.2/mingw_64/include/QtAxContainer/qaxobject.h \
 		C:/Qt/6.5.2/mingw_64/include/QtAxContainer/qaxbase.h \
 		C:/Qt/6.5.2/mingw_64/include/QtAxContainer/qaxobjectinterface.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/QAction \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QApplication \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qfuture.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qmutex.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qexception.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qpromise.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMenu \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmenu.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QMenuBar \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qmenubar.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QStatusBar \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qstatusbar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\qtnew\mainwindow.cpp
 
 debug/track.o: ../qtnew/track.cpp ../qtnew/track.h \
@@ -1071,7 +1111,46 @@ debug/track.o: ../qtnew/track.cpp ../qtnew/track.h \
 		C:/Qt/6.5.2/mingw_64/include/QtAxContainer/qaxobject.h \
 		C:/Qt/6.5.2/mingw_64/include/QtAxContainer/qaxbase.h \
 		C:/Qt/6.5.2/mingw_64/include/QtAxContainer/qaxobjectinterface.h \
-		ui_track.h
+		ui_track.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QApplication \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qfuture.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qmutex.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qexception.h \
+		C:/Qt/6.5.2/mingw_64/include/QtCore/qpromise.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QLabel \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpicture.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.5.2/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/QTextEdit \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/6.5.2/mingw_64/include/QtWidgets/qabstractscrollarea.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\track.o ..\qtnew\track.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 
