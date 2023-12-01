@@ -1,3 +1,5 @@
 # MotionCapture_Interface
 
-![简易流程图](Picture/Interface_1.png)
+## 2023/12/01
+
+小修改：添加了读取Excel文件的函数和静态库
